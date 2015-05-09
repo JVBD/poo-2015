@@ -10,13 +10,32 @@ namespace poo__paint
     {
         static void Main(string[] args)
         {
+           // Retangulo a = new Retangulo(34, 20, 300, 40);
+            //a.Imprime();
         }
-        
-        /*Crie um novo projeto chamado poo-paint, dentro do reposit´orio poo-2015. • Crie a classe com nome Retangulo, contendo os seguintes 
-            membros: – Atributos x e y para representar a posic¸˜ao do retˆangulo na tela. – Atributos largura e altura para representar as 
-        dimens˜oes do retˆangulo. – Um construtor que recebe os quatro parˆametros acima e inicializa os atributos correspondentes. – Um 
-            m´etodo Imprime que retorna uma String que descreve um retˆangulo (para imprimir no console, por exemplo). Um retˆangulo na 
-                posi¸c˜ao (x,y) = (34,20), 300 de largura e 40 de altura deve ser representado pela seguinte String: 
-        retangulo[x:34,y:20,l:300,a:40]*/
+    }
+
+    public class Retangulo
+    { 
+        int x = 0;
+        int y =  0;
+        int largura = 0;
+        int altura = 0;
+
+        public Retangulo(int x, int y, int largura, int altura)
+        {
+            this.x = x;
+            this.y = y;
+            this.largura = largura;
+            this.altura = altura;
+        }
+
+        public String Imprime()
+        {
+            string retangulo;
+            retangulo = "retangulo[x:" + x + ",y:" + y + ",l:" + largura + ",a:" + altura + "]";
+            Console.WriteLine("Dados do retângulo:  " + retangulo);
+            return retangulo;           
+        }
     }
 }
