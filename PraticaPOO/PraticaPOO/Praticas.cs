@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PraticaPOO
 {
-    class Praticas
+    public class Praticas
     {
         static void Main(string[] args)
         {
