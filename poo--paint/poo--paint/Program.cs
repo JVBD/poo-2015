@@ -92,16 +92,12 @@ namespace poo__paint
 
     public class Figura
     {
-        int x = 0;
-        int y = 0;
+        public int x;
+        public int y;
 
-        public Figura()
+        public virtual string Imprime()
         {
-        }
-
-        public String Imprime()
-        {
-
+            return "[x: y: l: a: raio:]";
         }
     }
 }
