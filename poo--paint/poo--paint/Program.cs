@@ -10,8 +10,14 @@ namespace poo__paint
     {
         static void Main(string[] args)
         {
-           // Retangulo a = new Retangulo(34, 20, 300, 40);
-            //a.Imprime();
+           Retangulo a = new Retangulo(34, 20, 300, 40);
+           Retangulo b = new Retangulo(34, 20, 30, 40);
+           Retangulo c = new Retangulo(34, 20, 3, 40);
+           a.Imprime();
+           c.Contador();
+           c.Zera_Contador();
+           c.Contador();
+           Console.ReadKey(false);
         }
     }
 
@@ -21,6 +27,7 @@ namespace poo__paint
         int y =  0;
         int largura = 0;
         int altura = 0;
+        static int contador = 0;
 
         public Retangulo(int x, int y, int largura, int altura)
         {
@@ -28,6 +35,7 @@ namespace poo__paint
             this.y = y;
             this.largura = largura;
             this.altura = altura;
+            contador++;
         }
 
         public String Imprime()
@@ -36,6 +44,17 @@ namespace poo__paint
             retangulo = "retangulo[x:" + x + ",y:" + y + ",l:" + largura + ",a:" + altura + "]";
             Console.WriteLine("Dados do retângulo:  " + retangulo);
             return retangulo;           
+        }
+
+        public void Contador()
+        {
+            Console.WriteLine("Objetos criados = " + contador);
+                
+        }
+
+        public void Zera_Contador()
+        {
+            contador = 0;
         }
     }
 }
