@@ -18,16 +18,23 @@ namespace poo__paint
            c.Zera_Contador();
            c.Contador();
            Console.ReadKey(false);
+
+            Figura d = new Figura();
         }
     }
 
+    //Classe Retangulo At. 1 e 2.
     public class Retangulo
     { 
         int x = 0;
         int y =  0;
         int largura = 0;
         int altura = 0;
-        static int contador = 0;
+        private static int contador = 0;
+
+        public Retangulo()
+        { 
+        }
 
         public Retangulo(int x, int y, int largura, int altura)
         {
@@ -49,12 +56,52 @@ namespace poo__paint
         public void Contador()
         {
             Console.WriteLine("Objetos criados = " + contador);
-                
         }
 
         public void Zera_Contador()
         {
             contador = 0;
+        }
+    }
+
+    //Classe Circulo At. 3
+    public class Circulo
+    {
+        int x=0;
+        int y=0;
+        int raio=0;
+        public Circulo(int x, int y, int raio)
+        {
+            this.x = x;
+            this.y = y;
+            this.raio = raio;
+        }
+
+        public Circulo()
+        {
+        }
+
+        public String Imprime()
+        {
+            string retangulo;
+            retangulo = "ciirculo[x:" + x + ",y:" + y + ",raio:" + raio + "]";
+            Console.WriteLine("Dados do círculo:  " + retangulo);
+            return retangulo;
+        }
+    }
+
+    public class Figura
+    {
+        int x = 0;
+        int y = 0;
+
+        public Figura()
+        {
+        }
+
+        public String Imprime()
+        {
+
         }
     }
 }
