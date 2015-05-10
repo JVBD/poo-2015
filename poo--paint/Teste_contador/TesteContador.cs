@@ -2,21 +2,20 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using poo__paint;
 
-
 namespace poo__paint    
 {
     [TestClass]
-    public class UnitTest1
+    public class TesteContador
     {
         [TestMethod]
-        public void Testa_Retangulo()
+        public void TestaContador()
         {
             Retangulo r1 = new Retangulo(10, 20, 50, 60);
-            Assert.AreEqual("retangulo[x:10,y:20,l:50,a:60]", r1.Imprime());
+            Assert.AreEqual(1, Retangulo.LeContador());
             Retangulo r2 = new Retangulo(5, 5, 10, 200);
-            Assert.AreEqual("retangulo[x:5,y:5,l:10,a:200]", r2.Imprime());
+            Assert.AreEqual(2, Retangulo.LeContador());
+            Retangulo r3 = new Retangulo(5, 5, 3, 67);
+            Assert.AreEqual(3, Retangulo.LeContador());
         }
-
     }
-
 }

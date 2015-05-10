@@ -53,6 +53,11 @@ namespace poo__paint
             return retangulo;           
         }
 
+        public static int LeContador()
+        {
+            return contador;
+        }
+
         public void Contador()
         {
             Console.WriteLine("Objetos criados = " + contador);

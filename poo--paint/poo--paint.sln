@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "poo--paint", "poo--paint\po
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteRetangulo", "TesteRetangulo\TesteRetangulo.csproj", "{6B4CF7B3-06A1-40C6-8166-BBE6F51FBEBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste_contador", "Teste_contador\Teste_contador.csproj", "{872AFBA7-5632-4F69-BAA1-479BA727985B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6B4CF7B3-06A1-40C6-8166-BBE6F51FBEBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B4CF7B3-06A1-40C6-8166-BBE6F51FBEBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B4CF7B3-06A1-40C6-8166-BBE6F51FBEBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{872AFBA7-5632-4F69-BAA1-479BA727985B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{872AFBA7-5632-4F69-BAA1-479BA727985B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{872AFBA7-5632-4F69-BAA1-479BA727985B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{872AFBA7-5632-4F69-BAA1-479BA727985B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
