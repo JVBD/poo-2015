@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace poo__paint
 {
@@ -10,99 +12,101 @@ namespace poo__paint
     {
         static void Main(string[] args)
         {
-           Retangulo a = new Retangulo(34, 20, 300, 40);
-           Retangulo b = new Retangulo(34, 20, 30, 40);
-           Retangulo c = new Retangulo(34, 20, 3, 40);
-           a.Imprime();
-           c.Contador();
-           c.Zera_Contador();
-           c.Contador();
-           Console.ReadKey(false);
+            AreaDeDesenho area = new AreaDeDesenho();
+            area.AdicionaFigura(new Retangulo(3, 4, 20, 50));
+            area.AdicionaFigura(new Circulo(150, 45, 20));
+            Application.Run(area);
 
             Figura d = new Figura();
         }
     }
 
     //Classe Retangulo At. 1 e 2.
-    public class Retangulo
-    { 
-        int x = 0;
-        int y =  0;
-        int largura = 0;
-        int altura = 0;
-        private static int contador = 0;
-
-        public Retangulo()
-        { 
-        }
+    public class Retangulo : Figura
+    {
+        private int plargura;
+        private int paltura;
+        static int Fcontador;
 
         public Retangulo(int x, int y, int largura, int altura)
         {
-            this.x = x;
-            this.y = y;
-            this.largura = largura;
-            this.altura = altura;
-            contador++;
+            xF = x;
+            yF = y;
+            plargura = largura;
+            paltura = altura;
+
+            Fcontador += 1;
         }
 
-        public String Imprime()
+        public override string Imprime()
         {
-            string retangulo;
-            retangulo = "retangulo[x:" + x + ",y:" + y + ",l:" + largura + ",a:" + altura + "]";
-            Console.WriteLine("Dados do retângulo:  " + retangulo);
-            return retangulo;           
+            return "retangulo[x:" + xF + ",y:" + yF + ",l:" + plargura + ",a:" + paltura + "]";
+        }
+
+        public static void ZeraContador()
+        {
+            Fcontador = 0;
         }
 
         public static int LeContador()
         {
-            return contador;
+            return Fcontador;
         }
 
-        public void Contador()
+        public override void Desenha(Graphics g)
         {
-            Console.WriteLine("Objetos criados = " + contador);
-        }
-
-        public void Zera_Contador()
-        {
-            contador = 0;
+            g.DrawRectangle(Pens.Black, xF, yF, plargura, paltura);
         }
     }
 
     //Classe Circulo At. 3
-    public class Circulo
+    public class Circulo : Figura
     {
-        int x=0;
-        int y=0;
-        int raio=0;
+        private int Fraio;
+        static int Fcontador;
+
         public Circulo(int x, int y, int raio)
         {
-            this.x = x;
-            this.y = y;
-            this.raio = raio;
+            xF = x;
+            yF = y;
+            Fraio = raio;
+
+            Fcontador += 1;
         }
 
-        public Circulo()
+        public override string Imprime()
         {
+            return "circulo[x:" + xF + ",y:" + yF + ",raio:" + Fraio + "]";
         }
 
-        public String Imprime()
+        public static void ZeraContador()
         {
-            string retangulo;
-            retangulo = "ciirculo[x:" + x + ",y:" + y + ",raio:" + raio + "]";
-            Console.WriteLine("Dados do círculo:  " + retangulo);
-            return retangulo;
+            Fcontador = 0;
+        }
+
+        public static int LeContador()
+        {
+            return Fcontador;
+        }
+
+        public override void Desenha(Graphics g)
+        {
+            g.DrawEllipse(Pens.Black, xF, yF, Fraio * 2, Fraio * 2);
         }
     }
 
     public class Figura
     {
-        public int x;
-        public int y;
+        protected int xF;
+        protected int yF;
 
         public virtual string Imprime()
         {
-            return "[x: y: l: a: raio:]";
+            return "figura[x:" + xF + ",y:" + yF + "]";
+        }
+
+        public virtual void Desenha(Graphics g)
+        {
         }
     }
 }
